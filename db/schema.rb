@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 2019_06_26_011309) do
     t.bigint "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
-
   add_foreign_key "answers", "questions"
   add_foreign_key "exams", "subjects"
   add_foreign_key "questions", "exams"
