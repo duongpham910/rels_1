@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success]= t ".success"
+      log_in @user
+      flash[:success]= I18n.t "controllers.users.success"
     else
       render "new"
     end
