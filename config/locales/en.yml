@@ -7,3 +7,25 @@ en:
       pass_confirm: "Password Confirmation"
       ava: "Avatar"
       success: "Success"
+  subjects:
+    index: 
+      title: "List subject"
+      add: "Add subject"
+      delete: "Delete"
+      edit: "Edit"
+      confirm: "Are you sure?"
+    new:
+      title: "Create subject"
+      button: "Create"
+    edit:
+      button: "Update"
+      title: "Edit subject"
+
+  controllers:
+    subjects:
+      successful: "Successfully"
+      error: "Error"
+
+  helper:
+    subjects:
+      title: "Exam Application"
