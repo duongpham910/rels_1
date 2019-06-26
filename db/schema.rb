@@ -10,7 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_25_022823) do
+ActiveRecord::Schema.define(version: 2019_06_26_011309) do
+
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.boolean "correct_answer"
+    t.bigint "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.time "duration"
+    t.bigint "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_exams_on_subject_id"
+  end
+
+  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.bigint "exam_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exam_id"], name: "index_questions_on_exam_id"
+  end
+
+  create_table "results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "exam_id"
+    t.bigint "question_id"
+    t.bigint "answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_results_on_answer_id"
+    t.index ["exam_id"], name: "index_results_on_exam_id"
+    t.index ["question_id"], name: "index_results_on_question_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
+  end
+
+  create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -24,4 +69,11 @@ ActiveRecord::Schema.define(version: 2019_06_25_022823) do
     t.datetime "avatar_updated_at"
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "exams", "subjects"
+  add_foreign_key "questions", "exams"
+  add_foreign_key "results", "answers"
+  add_foreign_key "results", "exams"
+  add_foreign_key "results", "questions"
+  add_foreign_key "results", "users"
 end
