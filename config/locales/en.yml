@@ -25,7 +25,18 @@ en:
     subjects:
       successful: "Successfully"
       error: "Error"
+    sessions:
+      invalid: "Invalid email/password combination"
+    users:
+      success: "Success"
 
   helper:
     subjects:
       title: "Exam Application"
+  sessions:
+    new:
+      login: "Log in"
+      email: "Email"
+      pass: "Password"
+      new?: "New user?"
+      signupnow: "Sign up now"
