@@ -1,0 +1,39 @@
+.nested-fields.answer-field {
+  input[type="checkbox"] {
+    width: 25px;
+  }  
+}
+
+.edit_exam{
+  .nested-fields.answer-field{
+    margin-left: 35px;
+  } 
+}
+
+.actions{ 
+  .button{
+    margin: 20px 0;
+  }
+}
+
+.box-exam {
+  border-radius: 11px;
+  // background-color: #aff1af;
+  border: 3px double #e1e1e1;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 15px;
+  width: 30%;
+  margin-right: 38px;
+  a:first-child{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  p{
+    line-height: 20px !important;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}

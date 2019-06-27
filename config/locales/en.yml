@@ -31,17 +31,34 @@ en:
     edit:
       button: "Update"
       title: "Edit subject"
-  controllers:
-    subjects:
-      successful: "Successfully"
-      error: "Error"
-    admin:
-      access_denied: "Access denied"
-      
+
+  admin:
     sessions:
       invalid: "Invalid email/password combination"
     users:
       success: "Success"
+    exams:
+      new: 
+        title: "Create exam"
+        add_q: "Add question"
+        add_a: "Add answer"
+      index:
+        title: "List exam"
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        add: "Add exam"
+        confirm: "Are you sure?"
+      edit:
+        button: "Update"
+        title: "Edit exam"       
+
+  controllers:
+    admin: 
+      access_denied: "Access denied"
+    subjects:
+      successful: "Successfully"
+      error: "Error"
   helper:
     subjects:
       title: "Exam Application"
@@ -74,13 +91,3 @@ en:
         pass: "Password"
         new?: "New user?"
         signupnow: "Sign up now"
-  admin:
-    exams:
-      index:
-        listexam: "List of examss"
-        name: "Name"
-        duration: "Duration"
-        subject: "Subject"
-        del: "Delete"
-        edit: "Edit"
-        sure?: "Are you sure?"
