@@ -9,3 +9,11 @@ User.create(name: "manh",
   email: "ducmanh@gmail.com",
   password: "123456",
   password_confirmation: "123456")
+
+5.times do |n|
+  name = "English grade #{n+1}"
+  subject = Subject.create(name: name)
+  5.times do |m|
+    subject.exams.build(name: "faker #{m+1}", duration: Time.now).save
+  end
+end

@@ -25,13 +25,16 @@ en:
       delete: "Delete"
       edit: "Edit"
       confirm: "Are you sure?"
+      gotest: "Go Test"
     new:
       title: "Create subject"
       button: "Create"
     edit:
       button: "Update"
       title: "Edit subject"
-
+    show:
+        subject: "Subject"
+        duration: "Duration"
   admin:
     sessions:
       invalid: "Invalid email/password combination"
@@ -51,8 +54,7 @@ en:
         confirm: "Are you sure?"
       edit:
         button: "Update"
-        title: "Edit exam"       
-
+        title: "Edit exam"
   controllers:
     admin: 
       access_denied: "Access denied"
@@ -62,17 +64,18 @@ en:
   helper:
     subjects:
       title: "Exam Application"
-  layouts:
-    Profile: "Profile"
-    Settings: "Settings"
-    header:
-      profile: "Profile"
-      settings: "Settings"
-      id: "ID"
-      login: "Login"
-      logout: "Logout"
-      webname: "Quizlearning"
-      home: "Home"
+  views:  
+    layouts:
+      Profile: "Profile"
+      Settings: "Settings"
+      header:
+        profile: "Profile"
+        settings: "Settings"
+        id: "ID"
+        login: "Login"
+        logout: "Logout"
+        webname: "Quizlearning"
+        home: "Home"
   sessions:
     new:
       login: "Log in"
