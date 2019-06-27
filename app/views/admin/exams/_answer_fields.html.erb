@@ -1,0 +1,9 @@
+<div class="nested-fields answer-field fieldset">
+  <%= f.label :content, "Answer" %>
+  <%= f.text_field :content, class: "form-control" %>
+  <%= f.label :correct_answer, t(".correct"), value: "1" %>
+  <%= f.check_box :correct_answer %>
+  <br>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "remove", "#", class: "remove_fields" %>
+</div>
