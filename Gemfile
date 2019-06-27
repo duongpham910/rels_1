@@ -17,9 +17,8 @@ gem "bootstrap-sass", "3.3.7"
 gem "mysql2"
 gem "popper_js", "~> 1.14.5"
 gem "jquery-rails"
-gem "will_paginate",           "3.1.7"
+gem "will_paginate", "3.1.7"
 gem "bootstrap-will_paginate", "1.0.0"
-
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

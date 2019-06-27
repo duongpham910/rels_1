@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:destroy]
     resources :subjects
+    resources :exams
   end
 end

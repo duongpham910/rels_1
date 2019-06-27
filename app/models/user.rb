@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :password, presence: false, length: { minimum: 6 }, allow_nil: true
   validates_attachment :avatar, presence: true,
   content_type: { content_type: /\Aimage\/.*\z/ },
   size: { in: 0..100.kilobytes }

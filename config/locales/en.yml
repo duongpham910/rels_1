@@ -37,6 +37,7 @@ en:
       error: "Error"
     admin:
       access_denied: "Access denied"
+      
     sessions:
       invalid: "Invalid email/password combination"
     users:
@@ -73,3 +74,13 @@ en:
         pass: "Password"
         new?: "New user?"
         signupnow: "Sign up now"
+  admin:
+    exams:
+      index:
+        listexam: "List of examss"
+        name: "Name"
+        duration: "Duration"
+        subject: "Subject"
+        del: "Delete"
+        edit: "Edit"
+        sure?: "Are you sure?"
