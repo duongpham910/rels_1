@@ -35,6 +35,9 @@ en:
     subjects:
       successful: "Successfully"
       error: "Error"
+    admin:
+      access_denied: "Access denied"
+      
     sessions:
       invalid: "Invalid email/password combination"
     users:
@@ -42,10 +45,17 @@ en:
   helper:
     subjects:
       title: "Exam Application"
-  views:
-    layouts:
-      Profile: "Profile"
-      Settings: "Settings"
+  layouts:
+    Profile: "Profile"
+    Settings: "Settings"
+    header:
+      profile: "Profile"
+      settings: "Settings"
+      id: "ID"
+      login: "Login"
+      logout: "Logout"
+      webname: "Quizlearning"
+      home: "Home"
   sessions:
     new:
       login: "Log in"
@@ -64,17 +74,13 @@ en:
         pass: "Password"
         new?: "New user?"
         signupnow: "Sign up now"
-  views:
-    users:
-      edit:
-        update_user_profile: "Update User Profile"
-      show:
+  admin:
+    exams:
+      index:
+        listexam: "List of examss"
         name: "Name"
-        email: "Email"
-    layouts:
-      header:
-        profile: "Profile"
-        settings: "Settings"
-        id: "ID"
-        login: "Login"
-        logout: "Logout"
+        duration: "Duration"
+        subject: "Subject"
+        del: "Delete"
+        edit: "Edit"
+        sure?: "Are you sure?"
