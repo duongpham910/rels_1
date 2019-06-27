@@ -17,4 +17,4 @@
 //= require_tree
 //= require popper
 //= require bootstrap
-//= require bootstrap-sprockets 
+//= require bootstrap-sprockets
