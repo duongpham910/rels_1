@@ -36,10 +36,22 @@ en:
         subject: "Subject"
         duration: "Duration"
   admin:
-    sessions:
-      invalid: "Invalid email/password combination"
-    users:
-      success: "Success"
+    subjects:
+      index: 
+        title: "List subject"
+        add: "Add subject"
+        delete: "Delete"
+        edit: "Edit"
+        show: "Show"
+        confirm: "Are you sure?"
+        action: "Action"
+        name_sub: "Subject"
+      new:
+        title: "Create subject"
+        button: "Create"
+      edit:
+        button: "Update"
+        title: "Edit subject"
     exams:
       new: 
         title: "Create exam"
@@ -52,15 +64,30 @@ en:
         delete: "Delete"
         add: "Add exam"
         confirm: "Are you sure?"
+        sub: "Subject :"
+        action: "Action"
+      show:
+        name_sub: "Subject name : "
+        name_ex: "Name : "
       edit:
         button: "Update"
         title: "Edit exam"
+
+    sessions:
+      invalid: "Invalid email/password combination"
+    users:
+      success: "Success"
+    
   controllers:
     admin: 
       access_denied: "Access denied"
     subjects:
       successful: "Successfully"
       error: "Error"
+    exams:
+      successful: "Successfully"
+      error: "Error"
+
   helper:
     subjects:
       title: "Exam Application"
@@ -76,6 +103,22 @@ en:
         logout: "Logout"
         webname: "Quizlearning"
         home: "Home"
+    exams:
+      successful: "Successfully"
+      error: "Error"
+
+  layouts:
+    Profile: "Profile"
+    Settings: "Settings"
+    header:
+      profile: "Profile"
+      settings: "Settings"
+      id: "ID"
+      login: "Login"
+      logout: "Logout"
+      webname: "Quizlearning"
+      home: "Home"
+
   sessions:
     new:
       login: "Log in"
@@ -84,6 +127,7 @@ en:
       new?: "New user?"
       signupnow: "Sign up now"
       prof_updated: "Profile updated"
+      
   helper:
     subjects:
       title: "Exam Application" 

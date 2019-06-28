@@ -15,6 +15,5 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree
-//= require popper
 //= require bootstrap
 //= require bootstrap-sprockets
