@@ -52,6 +52,19 @@ en:
       edit:
         button: "Update"
         title: "Edit subject"
+    sessions:
+      invalid: "Invalid email/password combination"
+    users:
+      success: "Success"
+      index:
+        list_user: "List of users"
+        user: "User"
+        create: "Create"
+        email: "Email"
+        member: "Member"
+        admin: "authorities"
+        isadmin: "Admin"
+        sure?: "Are you sure?"
     exams:
       new: 
         title: "Create exam"
@@ -72,15 +85,11 @@ en:
       edit:
         button: "Update"
         title: "Edit exam"
-
-    sessions:
-      invalid: "Invalid email/password combination"
-    users:
-      success: "Success"
-    
   controllers:
     admin: 
       access_denied: "Access denied"
+      users:
+        success: "Successful"
     subjects:
       successful: "Successfully"
       error: "Error"

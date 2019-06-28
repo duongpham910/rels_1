@@ -1,4 +1,5 @@
 class Admin::SubjectsController < ApplicationController
+  layout "admin/application"
   before_action :verify_admin!
   before_action :find_subject, except: [:index, :new, :create]
 
