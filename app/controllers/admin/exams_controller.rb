@@ -1,4 +1,5 @@
 class Admin::ExamsController < ApplicationController
+  layout "admin/application"
   before_action :verify_admin!
   before_action :find_exam, except: [:index, :new, :create]
   
