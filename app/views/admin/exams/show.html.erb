@@ -1,0 +1,20 @@
+<div class ="show-exam">
+  <p><strong><%= t(".name_sub") %></strong>
+  <%= @exam.subject.name %></p>
+  <p><strong><%= t(".name_ex") %></strong>
+  <%= @exam.name %></p>
+  <ul>
+    <% @exam.questions.each do |q| %>
+      <li><strong><%= q.content %></strong>
+        <div class="option">
+          <% q.answers.each do |a| %>
+            <label class="container"><%= a.content %>
+              <input type="radio" checked="checked" name="radio">
+              <span class="checkmark"></span>
+            </label>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

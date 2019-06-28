@@ -1,9 +1,12 @@
 class Admin::ExamsController < ApplicationController
-  layout "admin/application"
-  before_action :find_exam, only:[:edit, :update, :destroy]
+  before_action :verify_admin!
+  before_action :find_exam, except: [:index, :new, :create]
   
   def index
     @exams = Exam.all.paginate page: params[:page], per_page: 15
+  end
+
+  def show
   end
 
   def new
@@ -15,7 +18,7 @@ class Admin::ExamsController < ApplicationController
     @exam = Exam.new exam_params
     if @exam.save
       flash[:success] = I18n.t "controllers.exams.successful"
-      redirect_to 
+      redirect_to admin_exams_path
     else
       flash[:danger] = I18n.t "controllers.exams.error"
       render "new"
@@ -28,7 +31,7 @@ class Admin::ExamsController < ApplicationController
   def update
     if @exam.update_attributes exam_params
       flash[:success] = I18n.t "controllers.exams.successful"
-      redirect_to exams_path
+      redirect_to admin_exams_path
     else
       flash[:danger] = I18n.t "controllers.exams.error"
       render "edit"
@@ -38,7 +41,7 @@ class Admin::ExamsController < ApplicationController
   def destroy
     @exam.destroy
     flash[:success] = I18n.t "controllers.exams.successful"
-    redirect_to exams_path
+    redirect_to admin_exams_path
   end 
 
   private
@@ -54,4 +57,9 @@ class Admin::ExamsController < ApplicationController
     @exam = Exam.find params[:id]
   end
 
+  def verify_admin!
+    return if current_user.admin?
+    flash[:danger] = I18n.t ".controller.admin.access_denied"
+    redirect_to login_path
+  end
 end

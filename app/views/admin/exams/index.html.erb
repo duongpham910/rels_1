@@ -1,11 +1,11 @@
-<div class="container">  
+<div class="index-exam">  
   <h1><%= t ".title" %></h1>
   <hr>
   <div class="row">
     <% @exams.each do |exam| %>
       <div class="col-md-4 box-exam">
-        <%= link_to exam.name, "#" %> 
-        <p><b>Subject :</b> <%= exam.subject.name %></p>
+        <%= link_to exam.name, admin_exam_path(exam)  %> 
+        <p><b><%= t(".sub") %></b> <%= exam.subject.name %></p>
         <p><%= exam.duration %></p>
         <%= link_to t(".edit"), edit_admin_exam_path(exam), class: "btn btn-primary btn-md" %> 
         <%= link_to t(".delete"), admin_exam_path(exam), class: "btn btn-danger btn-md", method: :delete, data: { confirm: t(".confirm") } %> 
