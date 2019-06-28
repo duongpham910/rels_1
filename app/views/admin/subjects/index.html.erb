@@ -1,0 +1,29 @@
+<% provide :title, t(".title") %>
+<div class ="container">
+  <h1><%= t".title" %></h1>
+  <hr>
+
+  <table class="table table-bordered">
+    <tbody>
+      <% @subjects.each do |subject| %>
+        <tr>
+          <td><%= subject.name %></td>
+          <td>
+            <%= link_to t(".edit"), '#',  { "data-toggle" =>  "modal", "data-target" => "#modal-edit", class: "click-link"}  %> 
+            <div id="modal-edit" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content"></div>
+              </div>
+            </div>
+            | 
+            <%= link_to t(".delete"), '#', method: :delete, data: { confirm: t(".confirm")  } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= will_paginate @subjects %>
+  <br>
+  </div>
+</div>
