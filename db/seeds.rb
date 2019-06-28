@@ -14,6 +14,6 @@ User.create(name: "manh",
   name = "English grade #{n+1}"
   subject = Subject.create(name: name)
   5.times do |m|
-    subject.exams.build(name: "faker #{m+1}", duration: Time.now).save
+    subject.exams.build(name: "faker #{m+1}", duration: 50+m).save
   end
 end
