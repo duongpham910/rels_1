@@ -13,13 +13,14 @@ gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bcrypt", "3.1.12"
 gem "paperclip"
-gem "bootstrap-sass", "3.3.7"
+gem "bootstrap-sass", ">= 3.4.1"
 gem "mysql2"
 gem "jquery-rails"
 gem "will_paginate", "3.1.7"
 gem "bootstrap-will_paginate", "1.0.0"
 
 group :development, :test do
+  gem "pry-rails"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 end
 

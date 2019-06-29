@@ -1,8 +1,8 @@
 class Admin::ExamsController < ApplicationController
   layout "admin/application"
-  before_action :verify_admin!
+  before_action :verify_admin
   before_action :find_exam, except: [:index, :new, :create]
-  
+
   def index
     @exams = Exam.all.paginate page: params[:page], per_page: 15
   end
@@ -43,7 +43,7 @@ class Admin::ExamsController < ApplicationController
     @exam.destroy
     flash[:success] = I18n.t "controllers.exams.successful"
     redirect_to admin_exams_path
-  end 
+  end
 
   private
   def exam_params
@@ -56,11 +56,5 @@ class Admin::ExamsController < ApplicationController
 
   def find_exam
     @exam = Exam.find params[:id]
-  end
-
-  def verify_admin!
-    return if current_user.admin?
-    flash[:danger] = I18n.t ".controller.admin.access_denied"
-    redirect_to login_path
   end
 end

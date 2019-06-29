@@ -1,12 +1,12 @@
 class Admin::SubjectsController < ApplicationController
   layout "admin/application"
-  before_action :verify_admin!
+  before_action :verify_admin
   before_action :find_subject, except: [:index, :new, :create]
 
   def index
     @subjects = Subject.paginate page: params[:page], per_page: 15
   end
-  
+
   def show
   end
 
@@ -14,15 +14,15 @@ class Admin::SubjectsController < ApplicationController
     @subject = Subject.new
   end
 
-  def create 
-    @subject = Subject.new subject_params  
+  def create
+    @subject = Subject.new subject_params
     if @subject.save
       flash[:success] = I18n.t "controllers.subjects.successful"
       redirect_to admin_subjects_path
     else
       flash[:danger] = I18n.t "controllers.subjects.error"
       render "new"
-    end 
+    end
   end
 
   def edit
@@ -51,11 +51,5 @@ class Admin::SubjectsController < ApplicationController
 
   def subject_params
     params.require(:subject).permit(:name, :id)
-  end
-
-  def verify_admin!
-    return if current_user.admin?
-    flash[:danger] = I18n.t ".controller.admin.access_denied"
-    redirect_to login_path
   end
 end
