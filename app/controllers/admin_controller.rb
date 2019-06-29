@@ -1,6 +1,8 @@
 class AdminController < ApplicationController
   layout "admin/application"
   before_action :verify_admin!
+
+  def index; end
   
   private
 
