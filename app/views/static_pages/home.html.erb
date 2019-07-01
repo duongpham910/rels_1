@@ -1,0 +1,5 @@
+<div class = "content">
+  <h1><%= t ".title" %></h1>
+  <h4><%= t ".content" %></h4>
+  <%= link_to t(".button"), logged_in? ? subjects_path : login_path %>
+</div>

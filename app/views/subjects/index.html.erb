@@ -1,8 +1,10 @@
 <% provide :title, t(".title") %>
   <div class ="container">
-    <h1><%= t(".title") %></h1>
-    <%= form_for(@subject, url: subject_path(:id), method: :get) do |f| %>
-      <%= f.select :id, subject_collection, {}, {class: "form-control"} %>
-    <%= f.submit t(".gotest"), class: "btn btn-primary" %>
-    <% end %>
+    <div class="col-md-6 col-md-offset-3">
+      <h1><%= t(".title") %></h1>
+      <%= form_for(@subject, url: subject_path(:id), method: :get) do |f| %>
+        <%= f.select :id, subject_collection, {}, {class: "form-control"} %>
+      <%= f.submit t(".gotest"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
