@@ -1,0 +1,21 @@
+<%= form_for @result do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :exam_id, value: @exam.id %>
+  <div class="container">
+    <% @exam.questions.each_with_index do |question, index| %>
+      <%= f.hidden_field :question_id, value: question.id %>
+      <div>
+        <%= index +1 %>
+      </div>
+      <div>
+        <p1> <%= question.content %></p1>
+      </div>
+      <% question.answers.each do |answer| %>
+        <%= f.radio_button :answer_id, answer.id,name: question.id %> <%= answer.content %>
+      <% end %>
+    <% end %>
+  </div>
+  <div id = "submit">
+    <%= f.submit :submit %>
+  </div>
+<% end %>

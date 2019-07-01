@@ -1,6 +1,8 @@
 en:
 #===============view namespace user===============
   #===============user===============
+  exams:
+    doexam: "Do Exam"
   users:
     new:
       sign_up: "Sign up"
@@ -156,6 +158,9 @@ en:
     exams:
       successful: "Successfully"
       error: "Error"
+    result:
+      fails: "Fails"
+      success: "Success"
 
     #===============session===============
     sessions:
