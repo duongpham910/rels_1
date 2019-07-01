@@ -1,4 +1,6 @@
 en:
+#===============view namespace user===============
+  #===============user===============
   users:
     new:
       sign_up: "Sign up"
@@ -18,6 +20,18 @@ en:
       date: "Create date" 
     update:
       prof_updated: "Profile updated"
+
+  #===============session===============
+  sessions:
+    new:
+      login: "Log in"
+      email: "Email"
+      pass: "Password"
+      new?: "New user?"
+      signupnow: "Sign up now"
+      prof_updated: "Profile updated"
+
+  #===============subject===============
   subjects:
     index: 
       title: "List subject"
@@ -35,7 +49,38 @@ en:
     show:
         subject: "Subject"
         duration: "Duration"
+
+  #===============layout===============
+  layouts:
+    Profile: "Profile"
+    Settings: "Settings"
+    header:
+      profile: "Profile"
+      settings: "Settings"
+      id: "ID"
+      login: "Login"
+      logout: "Logout"
+      webname: "Quizlearning"
+      home: "Home"
+
+  #===============exam===============
+  exams:
+    successful: "Successfully"
+    error: "Error"
+
+  #===============home===============
+  static_pages:
+    home:
+      title: "Qizz Exam"
+      content: "Welcome to Quizz Exam. Click button to do Qizz Exam"
+      button: "Do Exam" 
+
+#===============end view namespace user===============
+
+
+#===============view namespace admin===============
   admin:
+    #===============subject===============
     subjects:
       index: 
         title: "List subject"
@@ -52,8 +97,12 @@ en:
       edit:
         button: "Update"
         title: "Edit subject"
+
+    #=============session===============
     sessions:
       invalid: "Invalid email/password combination"
+
+    #=============user===============
     users:
       success: "Success"
       index:
@@ -65,6 +114,8 @@ en:
         admin: "authorities"
         isadmin: "Admin"
         sure?: "Are you sure?"
+    
+    #===============exam===============
     exams:
       new: 
         title: "Create exam"
@@ -79,64 +130,48 @@ en:
         confirm: "Are you sure?"
         sub: "Subject :"
         action: "Action"
+        duration: "Duration"
       show:
         name_sub: "Subject name : "
         name_ex: "Name : "
       edit:
         button: "Update"
         title: "Edit exam"
+
+#===============end view namespace admin===============
+
+#===============controller namespace admin===============
   controllers:
     admin: 
       access_denied: "Access denied"
       users:
         success: "Successful"
+    
+    #===============subject===============
     subjects:
       successful: "Successfully"
       error: "Error"
+
+    #===============exam===============  
     exams:
       successful: "Successfully"
       error: "Error"
 
-  helper:
-    subjects:
-      title: "Exam Application"
-  views:  
-    layouts:
-      Profile: "Profile"
-      Settings: "Settings"
-      header:
-        profile: "Profile"
-        settings: "Settings"
-        id: "ID"
-        login: "Login"
-        logout: "Logout"
-        webname: "Quizlearning"
-        home: "Home"
-    exams:
+    #===============session===============
+    sessions:
       successful: "Successfully"
-      error: "Error"
+      invalid: "Error"
 
-  layouts:
-    Profile: "Profile"
-    Settings: "Settings"
-    header:
-      profile: "Profile"
-      settings: "Settings"
-      id: "ID"
-      login: "Login"
-      logout: "Logout"
-      webname: "Quizlearning"
-      home: "Home"
+#===============end controller namespace admin===============
 
-  sessions:
-    new:
-      login: "Log in"
-      email: "Email"
-      pass: "Password"
-      new?: "New user?"
-      signupnow: "Sign up now"
-      prof_updated: "Profile updated"
-      
+#===============controller namespace user===============
+  controllers:
+    subjects:
+      danger: "Please log in."
+
+#===============end controller namespace user===============
+
+#===============helper===============
   helper:
     subjects:
       title: "Exam Application" 
@@ -147,3 +182,5 @@ en:
         pass: "Password"
         new?: "New user?"
         signupnow: "Sign up now"
+
+#===============end helper===============        

@@ -1,4 +1,4 @@
-<div class ="show-exam">
+<div class ="container show-exam">
   <p><strong><%= t(".name_sub") %></strong>
   <%= @exam.subject.name %></p>
   <p><strong><%= t(".name_ex") %></strong>
@@ -9,7 +9,7 @@
         <div class="option">
           <% q.answers.each do |a| %>
             <label class="container"><%= a.content %>
-              <input type="radio" checked="checked" name="radio">
+              <input type="radio" name="<%= q.id %>" value="<%= a.id %>" >
               <span class="checkmark"></span>
             </label>
           <% end %>

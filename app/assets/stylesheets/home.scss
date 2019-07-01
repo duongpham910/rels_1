@@ -1,0 +1,35 @@
+.content{
+  background-image: url("home-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 615px;
+  text-align: center;
+  padding-top: 160px;
+  margin-top: -20px;
+  h1{
+    font-weight: bold;
+    font-size: 50px;
+  }
+  h4{
+    font-size: 30px;
+  }
+  a{
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    width: 15%;
+    margin: 20px auto;
+    cursor: pointer;
+    &:hover{
+      background: #fff;
+      color: #333;
+      border: 3px solid #333;
+      text-decoration: none;
+    }
+  }
+}

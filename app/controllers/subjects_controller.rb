@@ -1,5 +1,6 @@
 class SubjectsController < ApplicationController
   before_action :find_subject, only: [:show]
+  before_action :logged_in_user, only: [:index, :show]
 
   def index
     @subject = Subject.new
