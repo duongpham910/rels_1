@@ -13,14 +13,13 @@
         <%= f.label :duration %>
         <%= f.text_field :duration, class: "form-control" %>
       </div>
-      
-      <div class="form-group field">
+      <div class="form-group question-field">
         <%= f.fields_for :questions do |question| %>
           <%= render "question_fields", f: question %>
         <% end %>
       </div>
       <div class="link-questions">
-        <p> <%= link_to_add_fields(t("admin.exams.new.add_q"),f, :questions) %></p>
+        <p><%= link_to("Add Question", '#', data: { content: sub_question_field(f) }, id: 'sub_question', class: 'btn')%></p>
       </div>
       <div class="actions">
         <%= f.submit button, class: "btn btn-primary btn-md button" %>

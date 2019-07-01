@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, except: :destroy
   resources :admin, only: [:index]
   resources :exams, only: [:index, :show]
-  resources :results, only: [:create, :new]
+  resources :results, only: [:create, :new, :index, :show]
   namespace :admin do
     resources :users, only: [:destroy, :index]
     resources :subjects

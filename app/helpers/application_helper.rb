@@ -5,12 +5,17 @@ module ApplicationHelper
     page_title.empty? ? base_title  : page_title + " | " + base_title
   end
 
-  def link_to_add_fields(name, f, association)
-    new_object = f.object.send(association).klass.new
-    id = new_object.object_id
-    fields = f.fields_for(association, new_object, child_index: id) do |builder|
-      render(association.to_s.singularize + "_fields", f: builder)
+  def sub_question_field form
+    sub_question = form.object.questions.build
+    form.fields_for :questions, sub_question, child_index: 'hello' do |builder|
+      render 'question_fields', f: builder
     end
-    link_to name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")}
+  end
+  
+  def sub_answer_field form
+    sub_answer = form.object.answers.build
+    form.fields_for :answers, sub_answer, child_index: 'helloo' do |builder|
+      render 'answer_fields', f:builder
+    end
   end
 end

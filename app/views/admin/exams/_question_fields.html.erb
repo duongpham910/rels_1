@@ -1,19 +1,14 @@
-<div class="nested-fields fieldset">
+<div class="nested-fields">
   <%= f.label :content, "Question" %><br />
   <%= f.text_area :content, rows: 3, class: "form-control" %>
   <%= f.hidden_field :_destroy %>
-  <%= link_to "remove", '#', class: "remove_fields" %>
+  <%= link_to "remove Question", '#', class: "remove-fields" %>
   <br />
-  
-  <div class="form-group field">
-    <div class = "row">
-      <%= f.fields_for :answers do |answer| %>
-        <%= render "answer_fields", f: answer %>
-      <% end %>
-    </div>
+  <div class = "answer-field">
+    <%= f.fields_for :answers do |answer| %>
+    <%= render "answer_fields", f: answer %>
+    <% end %>
   </div>
-
-  <div class = "link-answers">
-    <p><%= link_to_add_fields(t("admin.exams.new.add_a"), f, :answers) %></p>
-  </div>
+  <%= link_to 'Add Answer', '#', id: "sub_answer", data: {content: sub_answer_field(f)}, class: 'btn' %>
 </div>
+

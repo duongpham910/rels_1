@@ -5,15 +5,29 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(name: "manh",
-  email: "ducmanh@gmail.com",
+User.create(name: "Admin",
+  email: "admin@gmail.com",
   password: "123456",
-  password_confirmation: "123456")
+  password_confirmation: "123456",
+  admin: true)
 
-5.times do |n|
+User.create(name: "foobar",
+  email: "foobar@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
+  admin: false)
+
+2.times do |n|
+  user=User.last
   name = "English grade #{n+1}"
   subject = Subject.create(name: name)
-  5.times do |m|
-    subject.exams.build(name: "faker #{m+1}", duration: 50+m).save
+  2.times do |m|
+    current_exam = subject.exams.create(name: "faker #{m+1}", duration: 50+m)
+    3.times do |p|
+      q1=current_exam.questions.create(content: "1+1=2?")
+      a1=q1.answers.create(content:"True",correct_answer: true)
+      a2=q1.answers.create(content:"False",correct_answer: false)
+      current_exam.results.build(:user_id => user.id, :exam_id => current_exam.id, :question_id => q1.id, :answer_id => a1.id).save
+    end
   end
 end
