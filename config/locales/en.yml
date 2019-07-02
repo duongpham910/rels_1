@@ -82,6 +82,9 @@ en:
 
 #===============view namespace admin===============
   admin:
+    #===============index===============
+    index:
+      title: "Welcome to admin QizzLearning's page"
     #===============subject===============
     subjects:
       index: 
@@ -140,32 +143,42 @@ en:
         button: "Update"
         title: "Edit exam"
 
+  layouts:
+    admin:
+      header:
+        brand: "QuizzLearning"
+        home: "Home"
+        user: "User"
+        exam: "Exam"
+        subject: "Subject"
+        logout: "Logout"
+
 #===============end view namespace admin===============
 
 #===============controller namespace admin===============
-  controllers:
+  controller:
     admin: 
       access_denied: "Access denied"
       users:
         success: "Successful"
     
     #===============subject===============
-    subjects:
-      successful: "Successfully"
-      error: "Error"
+      subjects:
+        successful: "Successfully"
+        error: "Error"
 
     #===============exam===============  
-    exams:
-      successful: "Successfully"
-      error: "Error"
-    result:
-      fails: "Fails"
-      success: "Success"
+      exams:
+        successful: "Successfully"
+        error: "Error"
+      result:
+        fails: "Fails"
+        success: "Success"
 
     #===============session===============
-    sessions:
-      successful: "Successfully"
-      invalid: "Error"
+      sessions:
+        successful: "Successfully"
+        invalid: "Error"
 
 #===============end controller namespace admin===============
 

@@ -18,10 +18,10 @@ class Admin::ExamsController < ApplicationController
   def create
     @exam = Exam.new exam_params
     if @exam.save
-      flash[:success] = I18n.t "controllers.exams.successful"
+      flash[:success] = I18n.t "controller.admin.exams.successful"
       redirect_to admin_exams_path
     else
-      flash[:danger] = I18n.t "controllers.exams.error"
+      flash[:danger] = I18n.t "controller.admin.exams.error"
       render "new"
     end
   end
@@ -31,17 +31,17 @@ class Admin::ExamsController < ApplicationController
 
   def update
     if @exam.update_attributes exam_params
-      flash[:success] = I18n.t "controllers.exams.successful"
+      flash[:success] = I18n.t "controller.admin.exams.successful"
       redirect_to admin_exams_path
     else
-      flash[:danger] = I18n.t "controllers.exams.error"
+      flash[:danger] = I18n.t "controller.admin.exams.error"
       render "edit"
     end
   end
 
   def destroy
     @exam.destroy
-    flash[:success] = I18n.t "controllers.exams.successful"
+    flash[:success] = I18n.t "controller.admin.exams.successful"
     redirect_to admin_exams_path
   end
 
