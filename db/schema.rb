@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 2019_07_03_063008) do
     t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 
+  create_table "responds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_responds_on_user_id"
+  end
+
   create_table "results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "exam_id"
@@ -45,9 +52,11 @@ ActiveRecord::Schema.define(version: 2019_07_03_063008) do
     t.bigint "answer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "respond_id"
     t.index ["answer_id"], name: "index_results_on_answer_id"
     t.index ["exam_id"], name: "index_results_on_exam_id"
     t.index ["question_id"], name: "index_results_on_question_id"
+    t.index ["respond_id"], name: "index_results_on_respond_id"
     t.index ["user_id"], name: "index_results_on_user_id"
   end
 
@@ -74,8 +83,10 @@ ActiveRecord::Schema.define(version: 2019_07_03_063008) do
   add_foreign_key "answers", "questions"
   add_foreign_key "exams", "subjects"
   add_foreign_key "questions", "exams"
+  add_foreign_key "responds", "users"
   add_foreign_key "results", "answers"
   add_foreign_key "results", "exams"
   add_foreign_key "results", "questions"
+  add_foreign_key "results", "responds"
   add_foreign_key "results", "users"
 end

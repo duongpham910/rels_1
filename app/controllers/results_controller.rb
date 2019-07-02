@@ -8,17 +8,16 @@ class ResultsController < ApplicationController
   end
 
   def new
-    @result = Result.new
-    @exam = Exam.find params[:exam_id]
+    
   end
 
   def create
     @result = Result.new result_params
     if @result.save
-      flash[:danger]=I18n.t "controllers.results.success"
+      flash[:success] = I18n.t "controllers.results.success"
       redirect_to exams_path
     else
-      flash[:danger]=I18n.t "controllers.results.fails"
+      flash[:danger] = I18n.t "controllers.results.fails"
       redirect_to exams_path
     end
   end
@@ -26,7 +25,7 @@ class ResultsController < ApplicationController
   private
 
   def result_params
-    params.require(:result).permit(:user_id, :question_id, :exam_id, :answer_id)
+    params.require(:results).permit(:user_id, :exam_id, :question_id, :answer_id, :respond_id)
   end
 
   def load_score exam_user_tested
