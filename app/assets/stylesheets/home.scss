@@ -33,3 +33,17 @@
     }
   }
 }
+
+/*==============view admin===========*/
+.admin-page{
+  position: relative;
+  img{
+    margin-top: -20px;
+  }
+  h1{
+    position: absolute;
+    font-size: 60px;
+    top: 18%;
+    left: 15%;
+  }
+}

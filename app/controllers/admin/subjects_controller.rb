@@ -17,10 +17,10 @@ class Admin::SubjectsController < ApplicationController
   def create
     @subject = Subject.new subject_params
     if @subject.save
-      flash[:success] = I18n.t "controllers.subjects.successful"
+      flash[:success] = I18n.t "controller.admin.subjects.successful"
       redirect_to admin_subjects_path
     else
-      flash[:danger] = I18n.t "controllers.subjects.error"
+      flash[:danger] = I18n.t "controller.amin.subjects.error"
       render "new"
     end
   end
@@ -30,17 +30,17 @@ class Admin::SubjectsController < ApplicationController
 
   def update
     if @subject.update_attributes subject_params
-      flash[:success] = I18n.t "controllers.subjects.successful"
+      flash[:success] = I18n.t "controller.admin.subjects.successful"
       redirect_to admin_subjects_path
     else
-      flash[:danger] = I18n.t "controllers.subjects.error"
+      flash[:danger] = I18n.t "controller.admin.subjects.error"
       render "edit"
     end
   end
 
   def destroy
     @subject.destroy
-    flash[:success] = I18n.t "controllers.subjects.successful"
+    flash[:success] = I18n.t "controller.admin.subjects.successful"
     redirect_to admin_subjects_path
   end
 
