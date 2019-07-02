@@ -1,5 +1,21 @@
-<ul>
-  <li><%= t ".name"%>: <%= @user.name %></li>
-  <li><%= t ".email"%>: <%= @user.email %></li>
-  <%= image_tag(@user.avatar.url) %>
-</ul>
+<div class = "container">
+  <div class="card hovercard">
+    <div class="card-background">
+      <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
+    </div>
+    <div class="useravatar">
+      <%= image_tag(@user.avatar.url, size: "100x100") %>
+    </div>
+    <div class="card-info"> 
+      <span class="card-title"><%= @user.name %></span>
+    </div>
+  </div>
+  <div class="well">
+    <div class="tab-content">
+      <div class="tab-pane fade in active" id="tab1">
+        <h4><strong><%= t ".email" %>:</strong> <%= @user.email %></h4>
+        <h5><strong><%= t ".score" %>:</strong></h5>
+      </div>
+    </div>
+  </div>
+</div>

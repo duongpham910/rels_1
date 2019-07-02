@@ -1,9 +1,23 @@
-<ul>
-<% @users.each do |user| %>
-  <li><%= t".id"%>:<%= user.id%></li>
-  <li><%= t".name"%>:<%= user.name%></li>
-  <li><%= t".email"%>:<%= user.email%></li>
-  <%= image_tag(user.avatar.url, size: "100x100") %>
-<% end %>
-</ul>
-
+<div class="container">
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-lg-3 col-sm-6 col-md-3">
+        <div class="card hovercard">
+          <div class="cardheader">
+          </div>
+          <div class="avatar">
+            <%= image_tag(user.avatar.url, size: "100x100") %>
+          </div>
+          <div class="info">
+            <div class="title">
+              <%= link_to user.name, user %>
+            </div>
+            <div class="desc">
+              <%= user.email %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
