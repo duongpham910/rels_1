@@ -1,0 +1,14 @@
+<div class="container index-exam">  
+  <h1><%= t ".title" %></h1>
+  <hr>
+    <%= will_paginate @exams %>
+    <div class="row">
+      <% @exams.each do |exam| %>
+        <div class="col-md-4 box-exam">
+          <%= link_to exam.name, admin_exam_path(exam) %> 
+          <p><b><%= t(".sub") %></b> <%= exam.subject.name %></p>
+          <p><b><%= t(".duration") %>: </b><%= exam.duration %></p>
+        </div>
+       <% end %>
+    </div>
+</div>

@@ -16,6 +16,13 @@
         <li><%= link_to t(".login"),login_path %></li>
       <% end %>
     </ul>
+    <div class="search_box">
+      <%= form_tag search_index_path, html: {class: ""}, method: :get do |form| %>
+        <%= text_field_tag :term, params[:term], class: "custom" %>
+        <%= submit_tag "", name: nil, class: "register" %>
+      <% end %>
+    </div>
+
   </div>
 </nav>
 
