@@ -64,6 +64,7 @@ en:
       logout: "Logout"
       webname: "Quizlearning"
       home: "Home"
+      result: "Results"
 
   #===============exam===============
   exams:

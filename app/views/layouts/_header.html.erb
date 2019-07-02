@@ -9,6 +9,7 @@
         <li><%= link_to t(".user"),users_path %></li>
         <li><%= link_to t(".profile"),current_user %></li>
         <li><%= link_to t(".settings"),edit_user_path(current_user) %></li>
+        <li><%= link_to t(".results"),results_path %></li>
         <li><%= link_to t(".class"), @current_user.admin? ? admin_subjects_path : subjects_path %></li>
         <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
       <% else %>
