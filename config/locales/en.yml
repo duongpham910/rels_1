@@ -22,7 +22,9 @@ en:
       date: "Create date" 
     update:
       prof_updated: "Profile updated"
-
+    show:
+      email: "Email"
+      score: "Scored"
   #===============session===============
   sessions:
     new:
