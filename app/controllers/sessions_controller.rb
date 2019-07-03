@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       if !user.admin?
-        redirect_to root_path
+        redirect_to subjects_path
       else
         redirect_to admin_index_path
       end

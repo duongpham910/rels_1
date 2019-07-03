@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes user_params
       flash[:success] = I18n.t "controllers.users.prof_updated"
+      redirect_to @user
     else
       render "edit"
     end

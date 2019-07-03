@@ -1,16 +1,31 @@
-<%= form_for @respond do |f| %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <% @exam.questions.each_with_index do |question, index| %>
-    <%= f.fields_for :results do |ff| %>
-      <%= ff.label :question_id, question.content, class: "form-control" %>
-        <% question.answers.each do |answer| %>
-          <%= ff.hidden_field :user_id, value: current_user.id %>
-          <%= ff.hidden_field :exam_id, value: @exam.id %>
-          <%= ff.hidden_field :question_id, value: question.id %></br>
-          <%= ff.label :answer_id, answer.content, value: answer.id %>
-          <%= ff.radio_button :answer_id, answer.id, name: "respond[results_attributes][#{index}][answer_id]" %>
+<div class="new-respond">
+  <%= hidden_field_tag :remaining_time, @exam.duration %>
+  <div class="timer">
+    <div id="clock"></div>
+  </div>
+  <br>
+  <br>
+  <%= form_for @respond do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <% @exam.questions.each_with_index do |question, index| %>
+      <%= f.fields_for :results do |ff| %>
+        <ul>
+          <li><strong><%= question.content %></strong>
+            <div class="option">
+              <% question.answers.each do |answer| %>
+                <%= ff.hidden_field :user_id, value: current_user.id %>
+                <%= ff.hidden_field :exam_id, value: @exam.id %>
+                <%= ff.hidden_field :question_id, value: question.id %></br>
+                  <label class="container"><%= ff.label :answer_id, answer.content, value: answer.id %>
+                  <%= ff.radio_button :answer_id, answer.id, name: "respond[results_attributes][#{index}][answer_id]" %>
+                  <span class="checkmark"></span>
+                </label>
+              <% end %>
+            </div>
+          </li>
+        </ul>
         <% end %>
       <% end %>
-    <% end %>
-  <%= f.submit 'Submit' %>
-<% end %>
+    <%= f.submit 'Submit', class: 'btn btn-success' %>
+  <% end %>
+</div>

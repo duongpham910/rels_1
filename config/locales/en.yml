@@ -20,8 +20,6 @@ en:
       destroy: "Destroy"
       new_user: "New User"
       date: "Create date" 
-    update:
-      prof_updated: "Profile updated"
     show:
       email: "Email"
       score: "Scored"
@@ -44,7 +42,7 @@ en:
       delete: "Delete"
       edit: "Edit"
       confirm: "Are you sure?"
-      gotest: "Go Test"
+      gotest: "Choose subject"
     new:
       title: "Create subject"
       button: "Create"
@@ -54,20 +52,22 @@ en:
     show:
         subject: "Subject"
         duration: "Duration"
+        confirm: "Are you sure to start ?"
 
   #===============layout===============
-  layouts:
-    Profile: "Profile"
-    Settings: "Settings"
-    header:
-      profile: "Profile"
-      settings: "Settings"
-      id: "ID"
-      login: "Login"
-      logout: "Logout"
-      webname: "Quizlearning"
-      home: "Home"
-      result: "Results"
+  views:
+    layouts:
+      Profile: "Profile"
+      Settings: "Settings"
+      header:
+        profile: "Profile"
+        settings: "Settings"
+        id: "ID"
+        login: "Login"
+        logout: "Logout"
+        home: "Home"
+        result: "Results"
+        Quizlearning: "Quizlearning"
 
   #===============exam===============
   exams:
@@ -195,6 +195,9 @@ en:
     responds:
       send_completed: "Send Success"
       send_failed: "Send Error"
+    users: 
+      prof_updated: "Profile updated"
+    
 
 #===============end controller namespace user===============
 
@@ -209,5 +212,5 @@ en:
         pass: "Password"
         new?: "New user?"
         signupnow: "Sign up now"
-
+  
 #===============end helper===============        

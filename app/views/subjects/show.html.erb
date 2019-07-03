@@ -3,8 +3,8 @@
   <hr>
   <div class="row">
     <% @subject.exams.each do |exam| %>
-      <div class="col-md-4 box-exam">
-        <%= link_to exam.name, subject_exam_path(@subject.id, exam.id) %>
+      <div class ="col-md-4 box-exam">
+        <%= link_to exam.name, new_respond_path(id: exam.id), data: {confirm: t(".confirm")} %> 
         <p><b><%= t(".subject") %> :</b> <%= exam.subject.name %></p>
         <p><b><%= t(".duration") %> :</b> <%= exam.duration %></p>
       </div>
