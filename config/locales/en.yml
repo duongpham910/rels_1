@@ -34,6 +34,7 @@ en:
       new?: "New user?"
       signupnow: "Sign up now"
       prof_updated: "Profile updated"
+      remember_me: "Remember me"
 
   #===============subject===============
   subjects:
