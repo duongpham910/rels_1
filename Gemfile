@@ -18,6 +18,7 @@ gem "mysql2"
 gem "jquery-rails"
 gem "will_paginate", "3.1.7"
 gem "bootstrap-will_paginate", "1.0.0"
+gem "jquery-countdown-rails"
 
 group :development, :test do
   gem "pry-rails"
