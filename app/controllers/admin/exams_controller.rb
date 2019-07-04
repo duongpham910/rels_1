@@ -13,6 +13,7 @@ class Admin::ExamsController < ApplicationController
   def new
     @exam = Exam.new
     @exam.questions.build.answers.build
+    @subjects = Subject.all
   end
 
   def create

@@ -4,7 +4,7 @@
   <div class="row">
     <% @subject.exams.each do |exam| %>
       <div class="col-md-4 box-exam">
-        <%= link_to exam.name, exam %> 
+        <%= link_to exam.name, subject_exams_path(@subject.id) %>
         <p><b><%= t(".subject") %> :</b> <%= exam.subject.name %></p>
         <p><b><%= t(".duration") %> :</b> <%= exam.duration %></p>
       </div>
