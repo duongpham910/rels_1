@@ -1,13 +1,13 @@
 <div class="container">  
   <h1><%= @subject.name %></h1>
   <hr>
-  <div class="row">
-    <% @subject.exams.each do |exam| %>
-      <div class="col-md-4 box-exam">
-        <%= link_to exam.name, exam %> 
-        <p><b><%= t(".subject") %> :</b> <%= exam.subject.name %></p>
-        <p><b><%= t(".duration") %> :</b> <%= exam.duration %></p>
-      </div>
-    <% end %>
-  </div>
+    <div class="row">
+      <% @subject.exams.each do |exam| %>
+        <div class="col-md-4 box-exam">
+          <%= link_to exam.name, subject_exam_path(exam.id)  %> 
+          <p><b><%= t(".subject") %> :</b> <%= exam.subject.name %></p>
+          <p><b><%= t(".duration") %> :</b> <%= exam.duration %></p>
+        </div>
+      <% end %>
+    </div>
 </div>

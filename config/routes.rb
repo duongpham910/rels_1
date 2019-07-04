@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "static_pages/home"
   root "static_pages#home"
-  resources :subjects, only: [:index, :show]
+  resources :subjects, only: [:index, :show] do
+    resources :exams, only: [:index, :show]
+  end
   resources :users, except: :destroy
   resources :admin, only: [:index]
-  resources :exams, only: [:index, :show]
-  resources :results, only: [:create, :new, :index]
+  resources :results, only: [:create, :new, :index, :show]
   resources :search, only: [:index]
   namespace :admin do
     resources :users, only: [:destroy, :index]

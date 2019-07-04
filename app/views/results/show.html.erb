@@ -1,0 +1,11 @@
+<div class="result-page">
+  <h1><strong><%= t ".student" %>: </strong><%= current_user.name %></h1>
+  <h1><strong><%= t ".exam " %>: </strong><%= @result.exam.name %></h1>
+  <p><%= @result.question.content %></p>
+  <p>Your answer</p>
+  <p><%= @result.answer.content %></p>
+  <p>True answer is</p>
+  <% @result.question.answers.true.each do |a| %>
+    <p><%= a.content %></p>
+  <%end%>
+</div>

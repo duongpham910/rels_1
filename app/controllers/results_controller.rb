@@ -1,5 +1,7 @@
 class ResultsController < ApplicationController
   def show
+    @result = Result.find params[:id]
+    @true_result = @result.question.answers.true
   end
 
   def index
@@ -16,7 +18,7 @@ class ResultsController < ApplicationController
     @result = Result.new result_params
     if @result.save
       flash[:danger]=I18n.t "controllers.results.success"
-      redirect_to exams_path
+      redirect_to @result
     else
       flash[:danger]=I18n.t "controllers.results.fails"
       redirect_to exams_path
@@ -39,4 +41,6 @@ class ResultsController < ApplicationController
       }
     end
   end
+  
+
 end
