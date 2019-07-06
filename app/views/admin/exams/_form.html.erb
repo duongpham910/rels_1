@@ -2,7 +2,8 @@
   <div class="container">
     <div class="col-md-8 col-md-offset-2" >
       <div class="form-group field">
-      <%= f.collection_select :subject_id, @subjects, :id, :name, :prompt => "Select a Subject" %>
+        <%= f.label :subject_id %>
+        <%= f.select :subject_id, options_for_select(@subjects), {include_blank: true}, class: "form-control" %>
       </div>
       <div class="form-group field">
         <%= f.label :name %>
@@ -12,7 +13,7 @@
         <%= f.label :duration %>
         <%= f.text_field :duration, class: "form-control" %>
       </div>
-      
+
       <div class="form-group field">
         <%= f.fields_for :questions do |question| %>
           <%= render "question_fields", f: question %>
