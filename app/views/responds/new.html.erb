@@ -1,0 +1,16 @@
+<%= form_for @respond do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <% @exam.questions.each_with_index do |question, index| %>
+    <%= f.fields_for :results do |ff| %>
+      <%= ff.label :question_id, question.content, class: "form-control" %>
+        <% question.answers.each do |answer| %>
+          <%= ff.hidden_field :user_id, value: current_user.id %>
+          <%= ff.hidden_field :exam_id, value: @exam.id %>
+          <%= ff.hidden_field :question_id, value: question.id %></br>
+          <%= ff.label :answer_id, answer.content, value: answer.id %>
+          <%= ff.radio_button :answer_id, answer.id, name: "respond[results_attributes][#{index}][answer_id]" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <%= f.submit 'Submit' %>
+<% end %>

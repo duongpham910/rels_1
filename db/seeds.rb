@@ -9,13 +9,15 @@ User.create(name: "Admin",
   email: "admin@gmail.com",
   password: "123456",
   password_confirmation: "123456",
-  admin: true)
+  admin: true,
+  avatar: File.open(File.join(Rails.root, 'public/system/users/avatars/000/000/001/', 'original','52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg')))
 
 User.create(name: "foobar",
   email: "foobar@gmail.com",
   password: "123456",
   password_confirmation: "123456",
-  admin: false)
+  admin: false,
+  avatar: File.open(File.join(Rails.root, 'public/system/users/avatars/000/000/002/', 'original','man-156584_960_720.png')))
 
 2.times do |n|
   user=User.last

@@ -183,13 +183,18 @@ en:
       sessions:
         successful: "Successfully"
         invalid: "Error"
-
+    
 #===============end controller namespace admin===============
 
 #===============controller namespace user===============
   controllers:
+    #===============subjects===============
     subjects:
       danger: "Please log in."
+    #===============responds===============
+    responds:
+      send_completed: "Send Success"
+      send_failed: "Send Error"
 
 #===============end controller namespace user===============
 
