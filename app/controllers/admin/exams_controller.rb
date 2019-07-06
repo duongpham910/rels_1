@@ -2,6 +2,7 @@ class Admin::ExamsController < ApplicationController
   layout "admin/application"
   before_action :verify_admin
   before_action :find_exam, except: [:index, :new, :create]
+  before_action :load_subjects, except: [:index, :show, :destroy]
 
   def index
     @exams = Exam.all.paginate page: params[:page], per_page: 15
@@ -13,7 +14,6 @@ class Admin::ExamsController < ApplicationController
   def new
     @exam = Exam.new
     @exam.questions.build.answers.build
-    @subjects = Subject.all
   end
 
   def create
@@ -57,5 +57,9 @@ class Admin::ExamsController < ApplicationController
 
   def find_exam
     @exam = Exam.find params[:id]
+  end
+
+  def load_subjects
+    @subjects = Subject.all.collect {|s| [s.name, s.id]}
   end
 end
