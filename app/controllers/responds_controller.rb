@@ -14,7 +14,7 @@ class RespondsController < ApplicationController
     @respond = Respond.new respond_params
     if @respond.save
       flash[:success] = I18n.t "controllers.responds.send_completed"
-      redirect_to results_path
+      redirect_to @respond
     else
       flash[:danger] = I18n.t "controllers.responds.send_failed"
       redirect_to exams_path

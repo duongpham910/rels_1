@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Your results</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Your answers</th>
+        <th>True answers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @respond.results.each do |result| %>
+      <tr>
+        <td><%= result.question.content %></td>
+        <td><%= result.answer.content %></td>
+        <% result.question.answers.true.each do |answer| %>
+          <td><%= answer.content %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
