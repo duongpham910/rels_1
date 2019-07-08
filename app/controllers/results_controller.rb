@@ -8,7 +8,8 @@ class ResultsController < ApplicationController
   end
 
   def new
-    
+    @result = Result.new
+    @exam = Exam.find params[:id]
   end
 
   def create

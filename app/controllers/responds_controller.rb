@@ -7,14 +7,14 @@ class RespondsController < ApplicationController
   def new
     @respond = Respond.new
     @respond.results.build
-    @exam = Exam.find params[:exam_id]
+    @exam = Exam.find params[:id]
   end
 
   def create
     @respond = Respond.new respond_params
     if @respond.save
       flash[:success] = I18n.t "controllers.responds.send_completed"
-      redirect_to @respond
+      redirect_to results_path
     else
       flash[:danger] = I18n.t "controllers.responds.send_failed"
       redirect_to exams_path
