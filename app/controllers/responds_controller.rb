@@ -2,6 +2,7 @@ class RespondsController < ApplicationController
   def show
     @respond = Respond.find params[:id]
     @results = @respond.results
+    scored @results
   end
 
   def new
@@ -14,7 +15,7 @@ class RespondsController < ApplicationController
     @respond = Respond.new respond_params
     if @respond.save
       flash[:success] = I18n.t "controllers.responds.send_completed"
-      redirect_to results_path
+      redirect_to @respond
     else
       flash[:danger] = I18n.t "controllers.responds.send_failed"
       redirect_to exams_path
@@ -26,5 +27,15 @@ class RespondsController < ApplicationController
   def respond_params
     params.require(:respond).permit(:user_id, 
       results_attributes: [:id, :user_id, :exam_id, :question_id, :answer_id, :_destroy, :respond_id])
+  end
+
+  def scored results
+    @score = 0
+    results.each do |result|
+      if result.answer.correct_answer?
+        @score += 1
+      end
+    end
+    @respond.update_attributes(user_id: current_user.id, score: @score)
   end
 end

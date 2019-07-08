@@ -2,18 +2,20 @@
 <table class = "table table-bordered table-hover">
   <thead>
     <tr>
+      <th><h2>No. </h2></th>
       <th><h2>Subject</h2></th>
       <th><h2>Exam</h2></th>
       <th><h2>Score</h2></th>
     </tr>
   </thead>
   <tbody>
-    <% @hash_score.each do |key, value| %>
-    <tr>
-      <td><%= value[:exam_name] %></td>
-      <td><%= value[:subject_name] %></td>
-      <td><%= value[:score] %></td>
-    </tr>
+    <% @responds.each_with_index do |respond, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= respond.results.first.exam.subject.name %></td>
+        <td><%= respond.results.first.exam.name %></td>
+        <td><%= respond.score %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

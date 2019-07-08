@@ -3,8 +3,7 @@ class ResultsController < ApplicationController
   end
 
   def index
-    exam_user_tested = Result.where(user_id: current_user.id).pluck(:exam_id).uniq
-    load_score exam_user_tested
+    @responds = Respond.where(user_id: current_user.id)
   end
 
   def new
